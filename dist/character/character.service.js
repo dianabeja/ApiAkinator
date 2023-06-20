@@ -34,7 +34,7 @@ let CharacterService = class CharacterService {
     }
     findNombre(name) {
         return this.characterRepository.findOne({ where: {
-                name: name
+                nombre_personaje: name
             } });
     }
     remove(id) {
@@ -42,7 +42,7 @@ let CharacterService = class CharacterService {
 };
 CharacterService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, typeorm_1.InjectRepository)(character_entity_1.Character)),
+    __param(0, (0, typeorm_1.InjectRepository)(character_entity_1.Personajes)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], CharacterService);
 exports.CharacterService = CharacterService;

@@ -18,7 +18,7 @@ CharacterModule = __decorate([
     (0, common_1.Module)({
         controllers: [character_controller_1.CharacterController],
         providers: [character_service_1.CharacterService],
-        imports: [typeorm_1.TypeOrmModule.forFeature([character_entity_1.Character])],
+        imports: [typeorm_1.TypeOrmModule.forFeature([character_entity_1.Personajes])],
         exports: [character_service_1.CharacterService]
     })
 ], CharacterModule);

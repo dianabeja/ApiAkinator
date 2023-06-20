@@ -1,6 +1,6 @@
-export declare class Character {
+export declare class Personajes {
     id: number;
-    name: string;
-    description: string;
-    image: string;
+    nombre_personaje: string;
+    descripcion_personaje: string;
+    url_personaje: string;
 }

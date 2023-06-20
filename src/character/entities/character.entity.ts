@@ -1,16 +1,16 @@
 import{ Entity, Column, PrimaryGeneratedColumn} from 'typeorm'
 
 @Entity()
-export class Character {
+export class Personajes {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column({length: 50})
-    name: string;
+    @Column({length: 30, nullable: false})
+    nombre_personaje: string;
 
-    @Column()
-    description: string;
+    @Column({ nullable: false})
+    descripcion_personaje: string;
 
-    @Column()
-    image: string;
+    @Column({ nullable: false})
+    url_personaje: string;
 }

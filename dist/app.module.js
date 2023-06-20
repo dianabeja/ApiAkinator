@@ -24,8 +24,8 @@ AppModule = __decorate([
                 port: 3306,
                 username: 'root',
                 password: '240402',
-                database: 'akinator2',
-                entities: [character_entity_1.Character],
+                database: 'guessthis',
+                entities: [character_entity_1.Personajes],
                 synchronize: true
             }),
             character_module_1.CharacterModule

@@ -1,8 +1,8 @@
 
 export class CreateCharacterDto {
-    name: string;
+    nombre_personaje: string;
 
-    description: string;
+    descripcion_personaje: string;
 
-    image: string;
+    url_personaje: string;
 }

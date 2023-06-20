@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CharacterModule } from './character/character.module';
-import { Character } from './character/entities/character.entity';
+import { Personajes } from './character/entities/character.entity';
 import { TypeOrmModule} from '@nestjs/typeorm'
 
 @Module({
@@ -13,9 +13,9 @@ import { TypeOrmModule} from '@nestjs/typeorm'
       port: 3306,
       username: 'root',
       password: '240402',
-    database: 'akinator2' ,
-    entities: [Character],
-    synchronize: true
+    database: 'guessthis' ,
+    entities: [Personajes],
+    synchronize: false
   }),
     CharacterModule
   ],

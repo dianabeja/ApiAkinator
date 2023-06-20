@@ -9,28 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Character = void 0;
+exports.Personajes = void 0;
 const typeorm_1 = require("typeorm");
-let Character = class Character {
+let Personajes = class Personajes {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], Character.prototype, "id", void 0);
+], Personajes.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 50 }),
+    (0, typeorm_1.Column)({ length: 30, nullable: false }),
     __metadata("design:type", String)
-], Character.prototype, "name", void 0);
+], Personajes.prototype, "nombre_personaje", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ nullable: false }),
     __metadata("design:type", String)
-], Character.prototype, "description", void 0);
+], Personajes.prototype, "descripcion_personaje", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ nullable: false }),
     __metadata("design:type", String)
-], Character.prototype, "image", void 0);
-Character = __decorate([
+], Personajes.prototype, "url_personaje", void 0);
+Personajes = __decorate([
     (0, typeorm_1.Entity)()
-], Character);
-exports.Character = Character;
+], Personajes);
+exports.Personajes = Personajes;
 //# sourceMappingURL=character.entity.js.map

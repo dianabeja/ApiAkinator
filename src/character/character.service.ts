@@ -2,13 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { CreateCharacterDto } from './dto/create-character.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import {Repository} from 'typeorm'
-import { Character } from './entities/character.entity';
+import { Personajes } from './entities/character.entity';
 
 @Injectable()
 export class CharacterService {
   constructor(
-    @InjectRepository(Character)
-    private readonly characterRepository: Repository<Character>
+    @InjectRepository(Personajes)
+    private readonly characterRepository: Repository<Personajes>
   ){}
 
   create(createCharacterDto: CreateCharacterDto) {
@@ -26,7 +26,7 @@ export class CharacterService {
 
   findNombre(name: string){
     return this.characterRepository.findOne({where:{
-      name:name
+      nombre_personaje:name
     }})
   }
   remove(id: number) {
