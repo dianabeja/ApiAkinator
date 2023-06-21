@@ -4,6 +4,10 @@ import { AppService } from './app.service';
 import { CharacterModule } from './character/character.module';
 import { Personajes } from './character/entities/character.entity';
 import { TypeOrmModule} from '@nestjs/typeorm'
+import { CaracteristicasModule } from './caracteristicas/caracteristicas.module';
+import { PrologService } from './prolog/prolog.service';
+import { PrologController } from './prolog/prolog.controller';
+import { Caracteristica } from './caracteristicas/entities/caracteristica.entity';
 
 @Module({
   imports: [
@@ -14,12 +18,13 @@ import { TypeOrmModule} from '@nestjs/typeorm'
       username: 'root',
       password: '240402',
     database: 'guessthis' ,
-    entities: [Personajes],
-    synchronize: false
+    entities: [Personajes, Caracteristica],
+    synchronize: true
   }),
-    CharacterModule
+    CharacterModule,
+    CaracteristicasModule
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, PrologController],
+  providers: [AppService, PrologService],
 })
 export class AppModule {}

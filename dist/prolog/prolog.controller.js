@@ -9,21 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateCharacterDto = void 0;
-const class_validator_1 = require("class-validator");
-class CreateCharacterDto {
-}
+exports.PrologController = void 0;
+const common_1 = require("@nestjs/common");
+const prolog_service_1 = require("./prolog.service");
+let PrologController = class PrologController {
+    constructor(prologService) {
+        this.prologService = prologService;
+    }
+    async consultarPersonajes() {
+        return this.prologService.consultarPersonajes();
+    }
+};
 __decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], CreateCharacterDto.prototype, "nombre_personaje", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], CreateCharacterDto.prototype, "descripcion_personaje", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], CreateCharacterDto.prototype, "url_personaje", void 0);
-exports.CreateCharacterDto = CreateCharacterDto;
-//# sourceMappingURL=create-character.dto.js.map
+    (0, common_1.Get)('consulta'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], PrologController.prototype, "consultarPersonajes", null);
+PrologController = __decorate([
+    (0, common_1.Controller)(),
+    __metadata("design:paramtypes", [prolog_service_1.PrologService])
+], PrologController);
+exports.PrologController = PrologController;
+//# sourceMappingURL=prolog.controller.js.map

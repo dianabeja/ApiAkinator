@@ -9,21 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateCharacterDto = void 0;
-const class_validator_1 = require("class-validator");
-class CreateCharacterDto {
-}
+exports.Caracteristica = void 0;
+const typeorm_1 = require("typeorm");
+let Caracteristica = class Caracteristica {
+};
 __decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], CreateCharacterDto.prototype, "nombre_personaje", void 0);
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    __metadata("design:type", Number)
+], Caracteristica.prototype, "id", void 0);
 __decorate([
-    (0, class_validator_1.IsString)(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], CreateCharacterDto.prototype, "descripcion_personaje", void 0);
+], Caracteristica.prototype, "nombre_personaje", void 0);
 __decorate([
-    (0, class_validator_1.IsString)(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], CreateCharacterDto.prototype, "url_personaje", void 0);
-exports.CreateCharacterDto = CreateCharacterDto;
-//# sourceMappingURL=create-character.dto.js.map
+], Caracteristica.prototype, "caracteristicas_personaje", void 0);
+Caracteristica = __decorate([
+    (0, typeorm_1.Entity)()
+], Caracteristica);
+exports.Caracteristica = Caracteristica;
+//# sourceMappingURL=caracteristica.entity.js.map

@@ -9,21 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateCharacterDto = void 0;
+exports.CreateCaracteristicaDto = void 0;
 const class_validator_1 = require("class-validator");
-class CreateCharacterDto {
+class CreateCaracteristicaDto {
 }
 __decorate([
     (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], CreateCharacterDto.prototype, "nombre_personaje", void 0);
+    __metadata("design:type", Number)
+], CreateCaracteristicaDto.prototype, "id", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], CreateCharacterDto.prototype, "descripcion_personaje", void 0);
+], CreateCaracteristicaDto.prototype, "nombre_personaje", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], CreateCharacterDto.prototype, "url_personaje", void 0);
-exports.CreateCharacterDto = CreateCharacterDto;
-//# sourceMappingURL=create-character.dto.js.map
+], CreateCaracteristicaDto.prototype, "caracteristicas_personaje", void 0);
+exports.CreateCaracteristicaDto = CreateCaracteristicaDto;
+//# sourceMappingURL=create-caracteristica.dto.js.map

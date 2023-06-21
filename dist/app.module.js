@@ -13,6 +13,10 @@ const app_service_1 = require("./app.service");
 const character_module_1 = require("./character/character.module");
 const character_entity_1 = require("./character/entities/character.entity");
 const typeorm_1 = require("@nestjs/typeorm");
+const caracteristicas_module_1 = require("./caracteristicas/caracteristicas.module");
+const prolog_service_1 = require("./prolog/prolog.service");
+const prolog_controller_1 = require("./prolog/prolog.controller");
+const caracteristica_entity_1 = require("./caracteristicas/entities/caracteristica.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -25,13 +29,14 @@ AppModule = __decorate([
                 username: 'root',
                 password: '240402',
                 database: 'guessthis',
-                entities: [character_entity_1.Personajes],
+                entities: [character_entity_1.Personajes, caracteristica_entity_1.Caracteristica],
                 synchronize: true
             }),
-            character_module_1.CharacterModule
+            character_module_1.CharacterModule,
+            caracteristicas_module_1.CaracteristicasModule
         ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [app_controller_1.AppController, prolog_controller_1.PrologController],
+        providers: [app_service_1.AppService, prolog_service_1.PrologService],
     })
 ], AppModule);
 exports.AppModule = AppModule;
