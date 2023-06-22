@@ -59,9 +59,10 @@ export class CaracteristicasService {
     return caracteristicaRandom;
   }
 
-  async randomPersonajes(personaje: string) {
+  async randomPersonajes(personaje: string, quitar:string) {
     const a= personaje.split(',');
     let obtenerPersonajes = [];
+    const b= quitar.split(',');
 
     for (let i = 0; i < a.length; i++) {
       let personajeEncontrado = await this.caracteristicasRepository.findOne({
@@ -88,10 +89,14 @@ export class CaracteristicasService {
       },
     );
 
+    const caracteristicasFiltradas = filtrarCaracteristicas.filter((valor) => {
+      return !b.includes(valor);
+    });
+
     const numeroRandom = Math.floor(
-      Math.random() * filtrarCaracteristicas.length,
+      Math.random() * caracteristicasFiltradas.length,
     );
-    const caracteristicaRandom = filtrarCaracteristicas[numeroRandom];
+    const caracteristicaRandom = caracteristicasFiltradas[numeroRandom];
 
     return caracteristicaRandom;
   }

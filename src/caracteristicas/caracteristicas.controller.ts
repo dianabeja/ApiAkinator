@@ -26,10 +26,13 @@ export class CaracteristicasController {
     return this.caracteristicasService.randomCararacteristica();
   }
 
-  @Get('/random/:id')
-  randomPersonajes(@Param('id') id: string) {
-    return this.caracteristicasService.randomPersonajes(id);
-  }
+  @Get('/random/personajes')
+  randomPersonajes(@Body() a: any) {
+    const quitar= a.quitar;
+    const id= a.personajes;
+  return this.caracteristicasService.randomPersonajes(id, quitar);
+}
+
 
   @Delete(':id')
   remove(@Param('id') id: string) {
