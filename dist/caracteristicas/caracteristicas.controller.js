@@ -29,6 +29,9 @@ let CaracteristicasController = class CaracteristicasController {
     findOne(id) {
         return this.caracteristicasService.findOne(id);
     }
+    randomCararacteristica() {
+        return this.caracteristicasService.randomCararacteristica();
+    }
     remove(id) {
         return this.caracteristicasService.remove(+id);
     }
@@ -53,6 +56,12 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], CaracteristicasController.prototype, "findOne", null);
+__decorate([
+    (0, common_1.Get)('/random/buscar'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], CaracteristicasController.prototype, "randomCararacteristica", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),

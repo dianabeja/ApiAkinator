@@ -16,16 +16,27 @@ let PrologController = class PrologController {
     constructor(prologService) {
         this.prologService = prologService;
     }
-    async consultarPersonajes() {
-        return this.prologService.consultarPersonajes();
+    async consultarPadre() {
+        const query = "obtener_personajes([humano],Personajes)";
+        const result = await this.prologService.consultarProlog(query);
+        return result;
+    }
+    async consulta() {
+        return await this.prologService.consultarProlog1();
     }
 };
 __decorate([
-    (0, common_1.Get)('consulta'),
+    (0, common_1.Get)('consulta/'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], PrologController.prototype, "consultarPersonajes", null);
+], PrologController.prototype, "consultarPadre", null);
+__decorate([
+    (0, common_1.Get)('/consulta2/'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], PrologController.prototype, "consulta", null);
 PrologController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [prolog_service_1.PrologService])

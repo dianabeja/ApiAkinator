@@ -27,5 +27,4 @@ cumple_caracteristicas(Personaje, Caracteristicas) :-
     forall(member(Caracteristica, Caracteristicas), member(Caracteristica, ListaCaracteristicas)).
 
 % Regla para obtener los personajes que cumplen con todas las características dadas
-obtener_personajes(Caracteristicas, Personajes) :-
-    findall(Personaje, cumple_caracteristicas(Personaje, Caracteristicas), Personajes).
+

@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PrologService } from './prolog.service';
+import { PrologService } from './prolog.service.js';
 
 describe('PrologService', () => {
   let service: PrologService;

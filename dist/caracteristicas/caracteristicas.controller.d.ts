@@ -6,5 +6,6 @@ export declare class CaracteristicasController {
     create(createCaracteristicaDto: CreateCaracteristicaDto): Promise<CreateCaracteristicaDto & import("./entities/caracteristica.entity").Caracteristica>;
     findAll(): Promise<import("./entities/caracteristica.entity").Caracteristica[]>;
     findOne(id: string): Promise<import("./entities/caracteristica.entity").Caracteristica>;
+    randomCararacteristica(): Promise<any>;
     remove(id: string): string;
 }

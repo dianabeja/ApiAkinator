@@ -23,7 +23,7 @@ export class CharacterController {
 
   @Get('/findNombre/:id')
   findNombre(@Param('id') id: string) {
-    return this.characterService. findNombre(id);
+    return this.characterService.findNombre(id);
   }
  
 

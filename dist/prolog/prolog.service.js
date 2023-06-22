@@ -10,35 +10,40 @@ exports.PrologService = void 0;
 const common_1 = require("@nestjs/common");
 const pl = require("tau-prolog");
 let PrologService = class PrologService {
-    consultarPersonajes() {
-        return new Promise((resolve, reject) => {
+    consultarProlog(query) {
+        try {
             const session = pl.create();
             const filePath = './ejemplo.pl';
             session.consult(filePath, {
                 success: () => {
-                    const query = `obtener_personajes([humano], Personajes).`;
-                    const results = [];
-                    session.query(query);
-                    const callback = (answer) => {
-                        if (answer === pl.type.SUCCESS) {
-                            const personajes = session.answers.map((ans) => ans.links.Personajes.id.toString());
-                            results.push(...personajes);
-                            session.answer(callback);
-                        }
-                        else if (answer === pl.type.FAIL) {
-                            resolve(results);
-                        }
-                        else if (answer === pl.type.ERROR) {
-                            reject(new Error(session.getError()));
-                        }
-                    };
-                    session.answer(callback);
                 },
                 error: (err) => {
-                    reject(err);
+                    console.error('Error al cargar el archivo Prolog:', err);
                 },
             });
-        });
+            const result = session.query(query);
+            console.log('result: ' + result);
+            const callback = function (answer) {
+                console.log("formato: ", session.format_answer(answer));
+                console.log('answer: ' + answer);
+            };
+            const success = session.answer(callback);
+            console.log(success);
+            return success;
+        }
+        catch (error) {
+            console.error('Error al ejecutar la consulta Prolog:', error);
+            return false;
+        }
+    }
+    async consultarProlog1() {
+        const goal = 'obtener_personajes([humano],Personajes';
+        const session = pl.create();
+        const filePath = './ejemplo.pl';
+        await session.consult(filePath);
+        await session.query(goal);
+        let answer = session.answers();
+        console.log(session.format_answer(answer));
     }
 };
 PrologService = __decorate([

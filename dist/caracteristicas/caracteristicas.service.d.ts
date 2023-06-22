@@ -8,4 +8,5 @@ export declare class CaracteristicasService {
     findAll(): Promise<Caracteristica[]>;
     findOne(nombre: string): Promise<Caracteristica>;
     remove(id: number): string;
+    randomCararacteristica(): Promise<any>;
 }

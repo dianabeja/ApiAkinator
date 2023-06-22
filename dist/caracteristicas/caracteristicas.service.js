@@ -27,11 +27,28 @@ let CaracteristicasService = class CaracteristicasService {
     findAll() {
         return this.caracteristicasRepository.find();
     }
-    findOne(nombre) {
-        return this.caracteristicasRepository.findOne({ where: { nombre_personaje: nombre } });
+    async findOne(nombre) {
+        const resultado = await this.caracteristicasRepository.findOne({
+            where: { nombre_personaje: nombre },
+        });
+        return resultado;
     }
     remove(id) {
         return `This action removes a #${id} caracteristica`;
+    }
+    async randomCararacteristica() {
+        const obtenerPersonajes = await this.caracteristicasRepository.find();
+        const personajesCaracteristicas = obtenerPersonajes.map((personajes) => personajes.caracteristicas_personaje);
+        const arrayCaracteristicas = personajesCaracteristicas.reduce((objeto, elemento) => {
+            const caracteristica = elemento.split(',');
+            return { caracteristica: objeto.caracteristica.concat(caracteristica) };
+        }, { caracteristica: [] });
+        const filtrarCaracteristicas = arrayCaracteristicas.caracteristica.filter((valor, indice) => {
+            return arrayCaracteristicas.caracteristica.indexOf(valor) === indice;
+        });
+        const numeroRandom = Math.floor(Math.random() * filtrarCaracteristicas.length);
+        const caracteristicaRandom = filtrarCaracteristicas[numeroRandom];
+        return caracteristicaRandom;
     }
 };
 CaracteristicasService = __decorate([

@@ -21,6 +21,11 @@ export class CaracteristicasController {
     return this.caracteristicasService.findOne(id);
   }
 
+  @Get('/random/buscar')
+  randomCararacteristica() {
+    return this.caracteristicasService.randomCararacteristica();
+  }
+
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.caracteristicasService.remove(+id);

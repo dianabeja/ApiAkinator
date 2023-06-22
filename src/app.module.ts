@@ -19,12 +19,12 @@ import { Caracteristica } from './caracteristicas/entities/caracteristica.entity
       password: '240402',
     database: 'guessthis' ,
     entities: [Personajes, Caracteristica],
-    synchronize: true
+    synchronize: false
   }),
     CharacterModule,
     CaracteristicasModule
   ],
-  controllers: [AppController, PrologController],
-  providers: [AppService, PrologService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

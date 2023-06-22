@@ -1,3 +1,4 @@
 export declare class PrologService {
-    consultarPersonajes(): Promise<string[]>;
+    consultarProlog(query: any): any;
+    consultarProlog1(): Promise<void>;
 }
