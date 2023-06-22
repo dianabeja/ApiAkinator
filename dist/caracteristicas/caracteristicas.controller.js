@@ -32,6 +32,9 @@ let CaracteristicasController = class CaracteristicasController {
     randomCararacteristica() {
         return this.caracteristicasService.randomCararacteristica();
     }
+    randomPersonajes(id) {
+        return this.caracteristicasService.randomPersonajes(id);
+    }
     remove(id) {
         return this.caracteristicasService.remove(+id);
     }
@@ -62,6 +65,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], CaracteristicasController.prototype, "randomCararacteristica", null);
+__decorate([
+    (0, common_1.Get)('/random/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], CaracteristicasController.prototype, "randomPersonajes", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),

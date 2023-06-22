@@ -9,4 +9,5 @@ export declare class CaracteristicasService {
     findOne(nombre: string): Promise<Caracteristica>;
     remove(id: number): string;
     randomCararacteristica(): Promise<any>;
+    randomPersonajes(personaje: string): Promise<any>;
 }

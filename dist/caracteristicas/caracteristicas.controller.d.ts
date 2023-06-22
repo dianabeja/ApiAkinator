@@ -7,5 +7,6 @@ export declare class CaracteristicasController {
     findAll(): Promise<import("./entities/caracteristica.entity").Caracteristica[]>;
     findOne(id: string): Promise<import("./entities/caracteristica.entity").Caracteristica>;
     randomCararacteristica(): Promise<any>;
+    randomPersonajes(id: string): Promise<any>;
     remove(id: string): string;
 }

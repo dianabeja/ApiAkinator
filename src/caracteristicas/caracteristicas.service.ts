@@ -45,9 +45,48 @@ export class CaracteristicasService {
       { caracteristica: [] },
     );
 
-    const filtrarCaracteristicas = arrayCaracteristicas.caracteristica.filter((valor, indice) => {
-      return arrayCaracteristicas.caracteristica.indexOf(valor) === indice;
-    });
+    const filtrarCaracteristicas = arrayCaracteristicas.caracteristica.filter(
+      (valor, indice) => {
+        return arrayCaracteristicas.caracteristica.indexOf(valor) === indice;
+      },
+    );
+
+    const numeroRandom = Math.floor(
+      Math.random() * filtrarCaracteristicas.length,
+    );
+    const caracteristicaRandom = filtrarCaracteristicas[numeroRandom];
+
+    return caracteristicaRandom;
+  }
+
+  async randomPersonajes(personaje: string) {
+    const a= personaje.split(',');
+    let obtenerPersonajes = [];
+
+    for (let i = 0; i < a.length; i++) {
+      let personajeEncontrado = await this.caracteristicasRepository.findOne({
+        where: { nombre_personaje: a[i] },
+      });
+      obtenerPersonajes.push(personajeEncontrado);
+    }
+
+    const personajesCaracteristicas = obtenerPersonajes.map(
+      (personajes) => personajes.caracteristicas_personaje,
+    );
+
+    const arrayCaracteristicas = personajesCaracteristicas.reduce(
+      (objeto, elemento) => {
+        const caracteristica = elemento.split(',');
+        return { caracteristica: objeto.caracteristica.concat(caracteristica) };
+      },
+      { caracteristica: [] },
+    );
+
+    const filtrarCaracteristicas = arrayCaracteristicas.caracteristica.filter(
+      (valor, indice) => {
+        return arrayCaracteristicas.caracteristica.indexOf(valor) === indice;
+      },
+    );
 
     const numeroRandom = Math.floor(
       Math.random() * filtrarCaracteristicas.length,

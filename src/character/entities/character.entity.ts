@@ -8,7 +8,7 @@ export class Personajes {
     @Column({length: 30, nullable: false})
     nombre_personaje: string;
 
-    @Column({ nullable: false})
+    @Column({ nullable: false, length:800})
     descripcion_personaje: string;
 
     @Column({ nullable: false})
