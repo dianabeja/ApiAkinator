@@ -34,8 +34,4 @@ export class CaracteristicasController {
 }
 
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.caracteristicasService.remove(+id);
-  }
 }

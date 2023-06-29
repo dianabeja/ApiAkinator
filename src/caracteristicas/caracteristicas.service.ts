@@ -26,10 +26,6 @@ export class CaracteristicasService {
     return resultado;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} caracteristica`;
-  }
-
   async randomCararacteristica() {
     const obtenerPersonajes = await this.caracteristicasRepository.find();
 

@@ -33,9 +33,6 @@ let CaracteristicasService = class CaracteristicasService {
         });
         return resultado;
     }
-    remove(id) {
-        return `This action removes a #${id} caracteristica`;
-    }
     async randomCararacteristica() {
         const obtenerPersonajes = await this.caracteristicasRepository.find();
         const personajesCaracteristicas = obtenerPersonajes.map((personajes) => personajes.caracteristicas_personaje);

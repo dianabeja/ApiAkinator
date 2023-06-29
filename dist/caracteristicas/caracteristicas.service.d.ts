@@ -7,7 +7,6 @@ export declare class CaracteristicasService {
     create(createCaracteristicaDto: CreateCaracteristicaDto): Promise<CreateCaracteristicaDto & Caracteristica>;
     findAll(): Promise<Caracteristica[]>;
     findOne(nombre: string): Promise<Caracteristica>;
-    remove(id: number): string;
     randomCararacteristica(): Promise<any>;
     randomPersonajes(personaje: string, quitar: string): Promise<any>;
 }

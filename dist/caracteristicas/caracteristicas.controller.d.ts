@@ -8,5 +8,4 @@ export declare class CaracteristicasController {
     findOne(id: string): Promise<import("./entities/caracteristica.entity").Caracteristica>;
     randomCararacteristica(): Promise<any>;
     randomPersonajes(a: any): Promise<any>;
-    remove(id: string): string;
 }

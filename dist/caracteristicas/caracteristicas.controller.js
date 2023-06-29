@@ -37,9 +37,6 @@ let CaracteristicasController = class CaracteristicasController {
         const id = a.personajes;
         return this.caracteristicasService.randomPersonajes(id, quitar);
     }
-    remove(id) {
-        return this.caracteristicasService.remove(+id);
-    }
 };
 __decorate([
     (0, common_1.Post)(),
@@ -74,13 +71,6 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], CaracteristicasController.prototype, "randomPersonajes", null);
-__decorate([
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
-], CaracteristicasController.prototype, "remove", null);
 CaracteristicasController = __decorate([
     (0, common_1.Controller)('caracteristicas'),
     __metadata("design:paramtypes", [caracteristicas_service_1.CaracteristicasService])
